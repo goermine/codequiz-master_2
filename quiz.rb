@@ -13,10 +13,9 @@ class Quiz
   end
 
   def run
-    data = array_date_column_values.reduce({}) do |result, key|
+    array_date_column_values.reduce({}) do |result, key|
       result.merge!("#{key}" => Hash[compose_names_and_values.shift])
     end
-    data
   end
 
   private
